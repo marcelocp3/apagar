@@ -1,0 +1,23 @@
+Uma nova funcionalidade foi requisitada nesta aplicação e você é o responsável por implementá-la: gerar log de inicialização e finalização do programa, de modo que quando o usuário desejar fechar a aplicação, isto seja registrado em um arquivo de texto.
+
+Sua tarefa neste exercício é:
+
+Ao inicializar a aplicação com ./q3 logfile.txt, adicionar ao arquivo de log logfile.txt uma nova linha contendo uma mensagem conforme o exemplo ./q3 iniciado\n. Se o arquivo de log não existir, deve ser criado (20% da nota).
+
+Se ao inicializar a aplicação e o arquivo de log já existir, ele não deve ser sobrescrito, as mensagens de log são escritas no final arquivo (10% da nota). DICA: veja os flags da função open() em man 2 open.
+
+Ao receber um sinal SIGTERM (15), adicionar ao arquivo de log uma nova linha contendo uma mensagem conforme o exemplo ./q3 finalizado\n e a aplicação é finalizada. (30% da nota pelo registro do handler e pela mensagem no arquivo).
+
+Ao receber um sinal SIGINT (2), adicionar ao arquivo de log uma nova linha contendo uma mensagem conforme o exemplo ./q3 nao finalizado com SIGINT\n, nesse caso a aplicação não é finalizada. (20% da nota pelo registro do handler e pela mensagem na saída padrão)
+
+O programa sai com o mesmo sinal que recebeu. (20% da nota)
+
+OBS:
+
+Você deve criar as funções para serem handlers dos sinais
+
+Os Handlers devem ser registrados na main
+
+Perceba que o nome do arquivo de log é passado pela linha de comando, nem sempre será logfile.txt.
+
+Para manipular o arquivo de log, utilize APENAS as chamadas do padrão POSIX conforme apresentado em aula: open, close, read, write. Não pode utilizar fopen, fdopen,fgets, fscanf por exemplo.
